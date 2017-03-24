@@ -1,0 +1,247 @@
+User 	Stephen McGovern
+Course 	17SP CIT-245-Z03B Data Structures and Programming: C++
+Test 	Quiz 4
+Started 	2/11/17 9:51 PM
+Submitted 	2/11/17 10:01 PM
+Status 	Completed
+Attempt Score 	60 out of 100 points  
+Time Elapsed 	10 minutes out of 20 minutes
+Results Displayed 	All Answers, Submitted Answers, Correct Answers, Feedback, Incorrectly Answered Questions
+
+    Question 1
+
+    10 out of 10 points
+    	
+    Correct 	
+    Which of these "properties" of testing using stubs and drivers are correct?
+    	
+    Correct Stubs are short programs that are fairly easy to write. They return only the minimum data necessary for the caller to be debugged.
+    	
+    Correct Using drivers and stubs avoids trying to debug a large program all at once.
+    	
+    Correct Drivers run the pieces individually. They are temporary. They can be minimal, without i/o, having only data generating code, and not doing much (except possibly validating) with the information they return.
+    Answers: 	
+    Using drivers and stubs is a lot of work for not much gain.
+    	
+    Correct Stubs are short programs that are fairly easy to write. They return only the minimum data necessary for the caller to be debugged.
+    	
+    Correct Using drivers and stubs avoids trying to debug a large program all at once.
+    	
+    Testing the pieces is difficult to do in any significant way. You need the entire program to run a meaningful test.
+    	
+    Correct Drivers run the pieces individually. They are temporary. They can be minimal, without i/o, having only data generating code, and not doing much (except possibly validating) with the information they return.
+    Question 2
+
+    0 out of 10 points
+    	
+    Incorrect 	
+    A program should have all of its functions written before testing can begin.
+    Selected Answer: 	
+    Incorrect True
+    Answers: 	
+    True
+    	
+    Correct False
+    Response Feedback: 	
+
+    Functions that call other functions can be tested independently of the called functions by writing stub functions. Stub functions are very simple functions that do nothing much more than sending just enough data to the caller to allow testing.
+    Question 3
+
+    0 out of 10 points
+    	
+    Incorrect 	
+    If you put assert macros throughout your code, then
+    	
+    Correct you can put #define NDEBUG in your code in the file just before the #include <cassert> directive.
+    	
+    Incorrect with integrated development environments, you can define NDEBUG for the compile session by using an IDE menu option.
+    	
+    Correct with a command line compiler such as g++ or Borland's command line compiler, you can use the command line compiler option DNDEBUG.
+    Answers: 	
+    you have to put up with the resulting inefficiency and program halts with messages indecipherable to the user until you edit your code to remove them.
+    	
+    Correct you can put #define NDEBUG in your code in the file just before the #include <cassert> directive.
+    	
+    with integrated development environments, you can define NDEBUG for the compile session by using an IDE menu option.
+    	
+    Correct with a command line compiler such as g++ or Borland's command line compiler, you can use the command line compiler option DNDEBUG.
+    Question 4
+
+    0 out of 10 points
+    	
+    Incorrect 	
+    The fundamental rule for testing functions requires that every function be tested in an already fully tested and debugged program. How can this be accomplished?
+    	
+    Correct Add each non-stub function in turn for testing.
+    	
+    Correct Write drivers for the function implementations one at a time to test them independently.
+    Answers: 	
+    Correct The main function is tested with stub functions replacing each` function.
+    	
+    Correct Add each non-stub function in turn for testing.
+    	
+    Write drivers for the stub functions to test them.
+    	
+    Impossible! The main function must have all the functions it calls attached to get it to compile and run properly.
+    	
+    Correct Write drivers for the function implementations one at a time to test them independently.
+    Question 5
+
+    10 out of 10 points
+    	
+    Correct 	
+    Given the following function, and the main function calling it, which, if any, of the choices below is the output of the following code? What does this function do?
+
+    #include <iostream>
+    using namespace std;
+
+    void func ( int& x, int & y)
+    {
+    int t = x;
+    x = y;
+    y = t;
+    }
+    int main()
+    {
+    int u = 3;
+    v = 4;
+    // ...
+    cout << u << " " << v << endl;
+    func ( u, v )
+    cout << u << " " << v << endl;
+    // ...
+    }
+    Selected Answer: 	
+    Correct 3 4 4 3
+    Answers: 	
+    3 4 4 4
+    	
+    Correct 3 4 4 3
+    	
+    3 4 3 4
+    	
+    3 4 3 3
+    	
+    none of the above (if you choose this, you must specify the output)
+    Response Feedback: 	
+
+    The code swaps the values stored in the caller's arguments.
+    Question 6
+
+    0 out of 10 points
+    	
+    Incorrect 	
+    An assertion
+    Selected Answers: 	
+    Incorrect is always easily and precisely stated with C++ syntax.
+    	
+    Correct if converted to a Boolean statement, may be used with the library assert macro to test whether the assertion is satisfied at that point in the code.
+    Answers: 	
+    is always easily and precisely stated with C++ syntax.
+    	
+    Correct if converted to a Boolean statement, may be used with the library assert macro to test whether the assertion is satisfied at that point in the code.
+    	
+    Correct is used to document and check correctness in programs.
+    	
+    Correct is typically a precondition or postcondition for a function.
+    	
+    is never more than just comment embedded in code.
+    Question 7
+
+    10 out of 10 points
+    	
+    Correct 	
+    Why does this version of the swap function fail to work? Is there a fix?
+
+    void swap(int & lhs, int& rhs)
+    {
+    lhs = rhs;
+    rhs = lhs;
+    }
+    Selected Answers: 	
+    Correct It fails because the first line destroys the old value of lhs without saving it. Then both variables have the old value of rhs in them.
+    	
+    Correct To fix this, we must save the lhs value in a local variable before making the first assignment indicated, then instead of the second line, assign rhs the value of the local variable:
+
+    int local = lhs;
+    lhs = rhs;
+    rhs = local;
+    Answers: 	
+    Correct It fails because the first line destroys the old value of lhs without saving it. Then both variables have the old value of rhs in them.
+    	
+    Of course it works! Just look at it. It clearly swaps the two parameters!
+    	
+    It fails OK, and we can fix it we can just reverse the order of the lines.
+    	
+    Correct To fix this, we must save the lhs value in a local variable before making the first assignment indicated, then instead of the second line, assign rhs the value of the local variable:
+
+    int local = lhs;
+    lhs = rhs;
+    rhs = local;
+    	
+    It fails because the programmer forgot to make the parameters call-by-reference.
+    Question 8
+
+    10 out of 10 points
+    	
+    Correct 	
+
+    Which of these remarks about overloading a function name is correct?
+    Selected Answers: 	
+    Correct
+
+    To decide which version of overloaded functions to use, C++ looks first for an exact match in the argument list types and the parameter list types.
+    	
+    Correct
+
+    C++ distinguishes between overloaded function versions by examining differences in the argument lists.
+    Answers: 	
+    Correct
+
+    To decide which version of overloaded functions to use, C++ looks first for an exact match in the argument list types and the parameter list types.
+    	
+    Correct
+
+    C++ distinguishes between overloaded function versions by examining differences in the argument lists.
+    	
+
+    C++ distinguishes between function overloaded implementations by examining differences in return types.
+    	
+
+    If there is no match between the argument list types and the parameter list types C++ expects the programmer to supply type conversions to get a match.
+    	
+
+    C++ does not support function name overloading.
+    Question 9
+
+    10 out of 10 points
+    	
+    Correct 	
+    A call-by-reference parameter may pass data only out of a function.
+    Selected Answer: 	
+    Correct False
+    Answers: 	
+    True
+    	
+    Correct False
+    Response Feedback: 	
+
+    The reference parameter is an alias for the caller's argument. The mechanism is to pass the address of the argument which is used where the parameter occurs. Hence, a reference parameter makes available to the function the initial and ongoing values of the caller's argument as well as providing a mechanism for the function to change the caller's argument.
+    Question 10
+
+    10 out of 10 points
+    	
+    Correct 	
+    The compiler has no problem distinguishing these two function definitions:
+
+    void func(double &x){/*...*/}
+    void func(double x){/*...*/}
+    Selected Answer: 	
+    Correct False
+    Answers: 	
+    True
+    	
+    Correct False
+    Response Feedback: 	
+
+    C++ does not distinguish functions based solely on call-by-value vs. call-by-reference.
