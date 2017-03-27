@@ -50,9 +50,9 @@ int main(){
 	
 	do{
 	input = prompt();
-	
+	cout << "Start 1, Target 2, Temporary 3.\n";
 	// changed 'A', 'B', 'C' to 1, 2, 3 to be consistent with prompt
-	cout << "Number of moves: " << hanoiV2('1', '2', '3', input, count) << endl << endl;
+	cout << "Number of moves: " << hanoiV2('1', '3', '2', input, count) << endl << endl;
 	}while(continueCheck());
 	
 	// hanoiV1('1', '3', '2', input); // testing
@@ -121,11 +121,10 @@ bool continueCheck(){
 		}else if(ans == 'n' || ans == 'N'){
 			return false;
 		}else{
-			cout << "Did not recognize response.\n.";
+			cout << "Did not recognize response.\n";
 			continue;
 		}
 	}
-
 }
 
 
